@@ -1,5 +1,5 @@
 
-import { Site, DGEquipment, Job, JobStatus, Priority } from './types';
+import { Site, DGEquipment, Job, JobStatus, Priority } from './types.ts';
 
 export const MOCK_SITES: Site[] = [
   { id: 'S-101', name: 'Downtown Telecom Hub', lat: 12.9716, lng: 77.5946, instructions: 'Key at security gate B', connectorType: 'Type 2 Industrial' },

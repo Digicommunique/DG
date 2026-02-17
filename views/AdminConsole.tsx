@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { MOCK_JOBS, MOCK_SITES, MOCK_DG_UNITS } from '../mockData';
-import { analyzeSLARisk } from '../services/geminiService';
+import { MOCK_JOBS, MOCK_SITES, MOCK_DG_UNITS } from '../mockData.ts';
+import { analyzeSLARisk } from '../services/geminiService.ts';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { ShieldAlert, TrendingUp, Users, Map as MapIcon, Settings, IndianRupee, Activity } from 'lucide-react';
-import SimulatedMap from '../components/SimulatedMap';
+import SimulatedMap from '../components/SimulatedMap.tsx';
 
 const data = [
   { name: '08:00', reqs: 4 },

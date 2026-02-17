@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Job, JobStatus, DGEquipment, Priority } from '../types';
-import { MOCK_JOBS, MOCK_SITES, MOCK_DG_UNITS } from '../mockData';
+import { Job, JobStatus, DGEquipment, Priority } from '../types.ts';
+import { MOCK_JOBS, MOCK_SITES, MOCK_DG_UNITS } from '../mockData.ts';
 import { MapPin, Navigation, Play, Pause, Square, FileCheck, CheckCircle2, ChevronRight, Fuel, Zap } from 'lucide-react';
 
 const OperatorDashboard: React.FC = () => {

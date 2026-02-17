@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { MOCK_SITES, MOCK_JOBS } from '../mockData';
-import { Job, JobStatus, Priority, Site } from '../types';
+import { MOCK_SITES, MOCK_JOBS } from '../mockData.ts';
+import { Job, JobStatus, Priority, Site } from '../types.ts';
 import { AlertCircle, Clock, MapPin, Zap, ArrowRight, CheckCircle2 } from 'lucide-react';
-import SimulatedMap from '../components/SimulatedMap';
-import { generatePriceEstimate } from '../services/geminiService';
+import SimulatedMap from '../components/SimulatedMap.tsx';
+import { generatePriceEstimate } from '../services/geminiService.ts';
 
 const CustomerDashboard: React.FC = () => {
   const [activeJobs, setActiveJobs] = React.useState<Job[]>(MOCK_JOBS);

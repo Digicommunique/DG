@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Site, DGEquipment } from '../types';
+import { Site, DGEquipment } from '../types.ts';
 import { MapPin, Truck, Radio } from 'lucide-react';
 
 interface MapProps {
