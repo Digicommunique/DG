@@ -1,10 +1,11 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-import { Job, JobStatus, Priority } from "../types.ts";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+import { Job, JobStatus, Priority } from "../types";
 
 export async function analyzeSLARisk(jobs: Job[]) {
+  // Initialize inside function to ensure environment variables are loaded
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+
   const prompt = `
     Analyze the following list of active emergency power jobs and identify high-risk SLA violations.
     Current Time: ${new Date().toISOString()}
@@ -47,6 +48,8 @@ export async function analyzeSLARisk(jobs: Job[]) {
 }
 
 export async function generatePriceEstimate(capacity: number, urgency: Priority) {
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+
   const prompt = `Calculate a fair market price for ${capacity}kVA mobile power with ${urgency} priority in Indian Rupees (INR). Consider base (approx ₹40/kVA), fuel surcharge, and urgency surcharge. Return only a JSON object with base, surcharge, and total as numbers.`;
   
   try {

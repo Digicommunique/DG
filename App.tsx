@@ -1,10 +1,10 @@
 
 import React from 'react';
-import Layout from './components/Layout.tsx';
-import { Role } from './types.ts';
-import CustomerDashboard from './views/CustomerDashboard.tsx';
-import OperatorDashboard from './views/OperatorDashboard.tsx';
-import AdminConsole from './views/AdminConsole.tsx';
+import Layout from './components/Layout';
+import { Role } from './types';
+import CustomerDashboard from './views/CustomerDashboard';
+import OperatorDashboard from './views/OperatorDashboard';
+import AdminConsole from './views/AdminConsole';
 
 const App: React.FC = () => {
   const [role, setRole] = React.useState<Role>(Role.CUSTOMER);

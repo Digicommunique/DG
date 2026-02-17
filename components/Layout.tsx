@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Role } from '../types.ts';
+import { Role } from '../types';
 import { LayoutDashboard, Truck, ShieldCheck, Power, Menu, X } from 'lucide-react';
 
 interface LayoutProps {

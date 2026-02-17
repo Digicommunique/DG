@@ -12,7 +12,31 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
         }
+        #crash-report {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            padding: 2rem;
+            z-index: 9999;
+            color: #ef4444;
+            font-family: monospace;
+        }
     </style>
+    <script>
+        // Define process for compatibility with Node-dependent modules
+        window.process = { env: { API_KEY: '' } };
+        
+        // Global error handler to debug blank page issues
+        window.onerror = function(msg, url, line, col, error) {
+            const report = document.getElementById('crash-report');
+            if (report) {
+                report.style.display = 'block';
+                report.innerText = 'Application Error: ' + msg + '\nAt: ' + url + ':' + line;
+            }
+            return false;
+        };
+    </script>
 <script type="importmap">
 {
   "imports": {
@@ -28,6 +52,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <div id="crash-report"></div>
     <!-- Explicitly import the entry point script -->
     <script type="module" src="index.tsx"></script>
 </body>
